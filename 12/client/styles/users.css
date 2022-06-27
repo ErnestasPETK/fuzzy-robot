@@ -1,0 +1,173 @@
+body{
+    background-color: #edf2f6;
+}
+nav{
+    background-color: #ffffff;
+    /* height: 2rem; */
+    padding: 1rem;
+    text-align: center;
+}
+nav a{
+    text-decoration: none;
+    color:#a8b5c5;
+    margin: 0 2rem;
+}
+nav a.active{
+    color:#667eea;
+}
+.content{
+    padding: 2rem 10%;
+}
+section.user_management div.content{
+    display: flex;
+}
+section.user_management div.content div:nth-of-type(1){
+    width: 70%;
+}
+section.user_management div.content div:nth-of-type(2){
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add_button {
+  background-color: #405cf5;
+  border-radius: 6px;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 100%;
+  line-height: 1.15;
+  padding: 1rem 2rem;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.add_button:disabled {
+  cursor: default;
+}
+
+.add_button:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.add_button a{
+    color: #fff;
+    text-decoration: none;
+}
+
+section.user_display div.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem 1rem;
+}
+
+.single_user{
+    background-color: #ffffff;
+    padding: 1rem;
+    width: 29%;
+    border-radius: 10px;
+}
+.single_user div.container_top {
+    text-align: center;
+
+}
+.single_user div.container_bottom {
+    text-align:end;
+}
+
+/* =============================== */
+
+.create_user_text{
+
+}
+
+section.create_user_form div.content{
+    padding: 0 20%;
+
+}
+section.create_user_form div.content form{
+    padding:2rem 20%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    border-radius: 10px;
+
+}
+section.create_user_form div.content form div{
+    padding:1rem;
+    display: flex;
+    gap:1rem;
+    justify-content:right;
+    width: 100%;
+}
+section.create_user_form div.content form div label{
+    font-weight: bold;
+    font-size: .9rem;
+text-align: end;
+    width: 20%;
+}
+section.create_user_form div.content form div input{
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #e6ecf0;
+    width:100%
+
+}
+section.create_user_form div.content form div textarea{
+    padding: 1rem;
+    border-radius: 6px;
+    border: 1px solid #e6ecf0;
+    width:100%
+}
+
+.buttons button {
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 100%;
+    line-height: 1.15;
+    padding: .8rem 2rem;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    transform: translateZ(0);
+    transition: all .2s,box-shadow .08s ease-in;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .buttons button:disabled {
+    cursor: default;
+  }
+  
+  .buttons button:focus {
+    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+  }
+  
+  .buttons button a{
+      color: #fff;
+      text-decoration: none;
+  }
+  .buttons button#cancel{
+    background-color: #edf2f6;
+    color:black;
+  }
+  .buttons button#submit{
+    background-color: #405cf5;
+  } 

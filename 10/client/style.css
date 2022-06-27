@@ -1,0 +1,6 @@
+.petType{
+    display: flex;
+}
+.active{
+    border: 1px solid #FFFFFF !important;
+}

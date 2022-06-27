@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script defer src="add.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <title>Add Pet</title>
+  </head>
+  <body>
+    <a href="./index.html">Display Pets</a>
+    <form id="petsAdditionForm" action="">
+      <h1>Add Pet</h1>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="petName" />
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="petAge" />
+      <label for="type">Type:</label>
+      <select name="type" id="petType">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="bunny">Bunny</option>
+      </select>
+      <button type="submit">Add</button>
+    </form>
+  </body>
+</html>

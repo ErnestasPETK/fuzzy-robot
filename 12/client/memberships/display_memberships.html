@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../styles/memberships.css" />
+    <script defer src="display_memberships.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <a class="active" href="../memberships/display_memberships.html"
+        >Memberships</a
+      >
+      <a href="../users/display_users.html">Users</a>
+    </nav>
+
+    <section class="membership_management">
+      <div class="content">
+        <div>
+          <h1>Membership management</h1>
+          <p>
+            Here you can manage your membership packages. Note: Make sure you
+            are not deleting or deactivating packages assigned to active users.
+          </p>
+        </div>
+        <div>
+          <button class="add_button">
+            <a href="../memberships/add_memberships.html">New membership</a>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="membership_display">
+      <div class="content">
+        <div class="single_membership">
+          <div class="container_top">
+            <h2>$ 1.99 Trial</h2>
+            <p>This is 2 days membership</p>
+          </div>
+          <div class="container_bottom">
+            <img
+              id="membership_delete"
+              src="https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

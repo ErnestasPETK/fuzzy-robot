@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../styles/users.css" />
+    <script defer src="./add_users.js"></script>
+    <title>Users</title>
+  </head>
+  <body>
+    <nav>
+      <a href="../users/display_memberships.html">Memberships</a>
+      <a class="active" href="../users/display_users.html">Users</a>
+    </nav>
+
+    <section class="create_user_text">
+      <div class="content">
+        <h1>Create user</h1>
+      </div>
+    </section>
+    <section class="create_user_form">
+      <div class="content">
+        <form action="" id="user_form">
+          <div>
+            <label for="name">First name: </label>
+            <input name="name" type="text" id="name" />
+          </div>
+          <div>
+            <label for="surname">Last name: </label>
+            <input name="surname" type="text" id="surname" />
+          </div>
+          <div>
+            <label for="email">Email Address: </label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div id="membership">
+            <label for="description">Change Membership </label>
+          </div>
+          <div class="buttons">
+            <button id="cancel">Cancel</button>
+            <button type="submit" id="submit">New User</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
