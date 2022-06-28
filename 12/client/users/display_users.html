@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../styles/users.css" />
+    <script defer src="display_users.js"></script>
+    <title>Users</title>
+  </head>
+  <body>
+    <nav>
+      <a href="../memberships/display_memberships.html">Memberships</a>
+      <a class="active" href="../users/display_users.html">Users</a>
+    </nav>
+
+    <section class="user_management">
+      <div class="content">
+        <div>
+          <h1>User Management</h1>
+        </div>
+        <div>
+          <button href="../users/add_users.html" class="add_button">
+            <a>New User</a>
+          </button>
+        </div>
+        <div class="sorting">
+          <label for="sort">Sort by: </label>
+          <select id="sort" name="sort">
+            <option value="asc">Asc</option>
+            <option value="desc">Desc</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section class="users_display">
+      <div class="content">
+        <div class="single_user">
+          <div class="container_top">
+            <h3>
+              <span id="name">Ernestas</span>
+              <span id="surname">Petkevicius</span>
+            </h3>
+          </div>
+          <div class="container_bottom">
+            <p>Email address: <span id="email">ernestas@ernestas.com</span></p>
+            <p>Membership: <span id="membership">Trial</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

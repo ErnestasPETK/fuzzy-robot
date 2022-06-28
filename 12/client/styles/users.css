@@ -16,10 +16,11 @@ nav a.active{
     color:#667eea;
 }
 .content{
-    padding: 2rem 10%;
+    padding: 2rem 10% 0 10%;
 }
 section.user_management div.content{
     display: flex;
+    flex-wrap: wrap;
 }
 section.user_management div.content div:nth-of-type(1){
     width: 70%;
@@ -29,6 +30,14 @@ section.user_management div.content div:nth-of-type(2){
     display: flex;
     align-items: center;
     justify-content: center;
+}
+section.user_management div.content div:nth-of-type(3){
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .add_button {
@@ -64,7 +73,7 @@ section.user_management div.content div:nth-of-type(2){
     text-decoration: none;
 }
 
-section.user_display div.content {
+section.users_display div.content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -79,11 +88,26 @@ section.user_display div.content {
     border-radius: 10px;
 }
 .single_user div.container_top {
-    text-align: center;
+    text-align: start;
 
 }
 .single_user div.container_bottom {
-    text-align:end;
+    text-align:start;
+}
+#name, #surname {
+    color: gray;
+}
+#email, #membership {
+    color:#405cf5;
+}
+
+section.user_management div.content div.sorting{
+    text-align: center;
+}
+
+section.user_management div.content div.sorting label{
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 /* =============================== */
@@ -171,3 +195,4 @@ section.create_user_form div.content form div textarea{
   .buttons button#submit{
     background-color: #405cf5;
   } 
+
