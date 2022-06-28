@@ -4,6 +4,7 @@ const dotenvExpand = require('dotenv-expand');
 const express = require('express');
 dotenvExpand.expand(dotEnv);
 const cors = require('cors');
+const { request } = require('express');
 const app = express();
 
 app.use(cors())
@@ -18,6 +19,29 @@ router.get('/', async (req, res) => {
     try {
         const connection = await client.connect();
         const dbRes = await connection.db("nodeJs").collection("services").find({}).toArray();
+        await connection.close();
+        return res.send(dbRes);
+    } catch (err) {
+        res.status(500).json({ error: "failed to retrieve from db : " + err });
+    }
+});
+
+
+
+router.get('/id/:id', async (req, res) => {
+
+    let membershipID;
+
+    try {
+        membershipID = req.params.id;
+
+    } catch (err) {
+        res.status(500).json({ error: "Failed to fetch request body" });
+    }
+    try {
+        const connection = await client.connect();
+        const dbRes = await connection.db("nodeJs").collection("services").find({ _id: ObjectId(membershipID) }).toArray();
+        console.log(dbRes);
         await connection.close();
         return res.send(dbRes);
     } catch (err) {

@@ -2,15 +2,24 @@ const getUsers = async (sortType = "asc") => await fetch(`//localhost:3000/api/u
     method: 'GET',
 });
 
+const getMemberships = async () => await fetch(`//localhost:3000/api/memberships`, {
+    method: 'GET',
+});
+
 const clearUsers = () => {
     const usersDisplay = document.querySelector("section.users_display div.content");
     usersDisplay.replaceChildren();
 }
 
+
 const displayUsers = async (users) => {
+
+    const memberships = await (await getMemberships()).json();
+    console.log(memberships);
+
     const usersDisplay = document.querySelector("section.users_display div.content");
     for (let user of users) {
-
+        console.log(user);
         const userElement = document.createElement("div");
         const containerTopElement = document.createElement("div");
         const containerBottomElement = document.createElement("div");
@@ -41,8 +50,9 @@ const displayUsers = async (users) => {
         emailFullElement.textContent = "Email address: ";
         emailFullElement.append(emailElement);
 
+        const membershipName = memberships.find(membership => membership._id === user.service_id).name;
         membershipFullElement.textContent = "Membership: ";
-        membershipElement.textContent = user.service_id;
+        membershipElement.textContent = membershipName;
         membershipFullElement.append(membershipElement);
 
         containerTopElement.append(nameAndSurnameElement);
