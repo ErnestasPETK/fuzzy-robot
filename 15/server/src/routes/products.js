@@ -23,7 +23,9 @@ router.get("/", async (req, res) => {
 
 
 router.get("/id/:id", async (req, res) => {
+
     let product_id;
+
     try {
         product_id = req.params.id;
     }
@@ -46,6 +48,7 @@ router.get("/id/:id", async (req, res) => {
 
 
 router.post("/", async (req, res) => {
+
     let response;
 
     let title = req.body.title;

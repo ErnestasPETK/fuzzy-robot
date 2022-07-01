@@ -1,44 +1,61 @@
 const mysql = require('mysql2/promise');
 const express = require('express');
-
 const router = express.Router();
 
+const MYSQL_CONFIG = require('../config');
 
-router.get("/", async (req, res) => {
-    let products;
+
+router.get("/id/:id", async (req, res) => {
+    let order_id;
     try {
-        const connection = await mysql.createConnection(mysqlConfig);
+        order_id = req.params.id;
+    }
+    catch {
+        res.status(400).send("Bad Request");
+    }
+    try {
+        const connection = await mysql.createConnection(MYSQL_CONFIG);
 
-        [products] = await connection.execute(`SELECT * FROM products`);
+        [orders] = await connection.execute(`SELECT * FROM orders LEFT JOIN products ON orders.product_id = products.id WHERE orders.id = ${order_id}`);
         await connection.end();
 
     } catch (e) {
         console.log(e);
     }
 
-    res.status(200).send(products);
+    res.status(200).send(orders);
 });
 
 
 router.post("/", async (req, res) => {
 
-    let brand = req.body.brand;
-    let model = req.body.model;
-    let size = req.body.size;
-    let price = req.body.price;
+    let product_id, customer_name, customer_email, ip_address;
+    let response;
+    try {
+        product_id = req.body.product_id;
+        customer_name = req.body.customer_name;
+        customer_email = req.body.customer_email;
+        ip_address = req.headers['x-forwarded-for'] ||
+            req.socket.remoteAddress ||
+            null;
+    }
+    catch {
+        res.status(400).send("Bad Request");
+    }
+    let timestamp = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    ip_address = "::1" ? ip_address = "localhost" : ip_address;
 
     try {
-        const connection = await mysql.createConnection(mysqlConfig);
+        const connection = await mysql.createConnection(MYSQL_CONFIG);
 
-        const response = await connection.execute(`INSERT INTO shirts (brand, model, size, price) VALUES ('${brand}', '${model}', '${size}', ${price})`);
-        console.log(response);
+        response = await connection.execute(`INSERT INTO orders (product_id, customer_name, customer_email, ip_address, timestamp) VALUES ('${product_id}', '${customer_name}', '${customer_email}', '${ip_address}', '${timestamp}')`);
         await connection.end();
 
     } catch (e) {
         console.log(e);
     }
 
-    res.status(200).send('yees');
+    res.status(200).send(response);
 });
 
 module.exports = router;
