@@ -5,16 +5,17 @@ dotenvExpand.expand(dotEnv);
 const cors = require('cors');
 
 const port = process.env.PORT || 8080;
-
-const membershipsRoute = require('./src/routes/memberships');
-const usersRoute = require('./src/routes/users');
+const productsRoute = require('./src/routes/products');
+const ordersRoute = require('./src/routes/orders');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use('/api/memberships', membershipsRoute);
-app.use('/api/users', usersRoute);
+app.use('/api/products', productsRoute);
+app.use('/api/orders', ordersRoute);
 
-
+app.all("*", async (req, res) => {
+    res.status(404).send("Oh no you don't");
+});
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
