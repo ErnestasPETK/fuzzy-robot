@@ -8,8 +8,43 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="../styles/output.css" />
-    <script defer src="script.js"></script>
-    <title>Health</title>
+    <script defer src="health.js"></script>
+    <title>Health log</title>
   </head>
-  <body></body>
+  <body>
+    <nav class="bg-gray-100">
+      <div
+        class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative flex items-center justify-between h-16"
+      >
+        <img
+          class="block h-2/4 w-1/4 rounded-full"
+          src="https://www.stonyplainvetclinic.com/wp-content/uploads/2021/01/Stony-Plain-Vet-Clinic-1-e1611916891430.png"
+          alt=""
+        />
+        <div class="space-x-10 sm:block ml-6 flex text-amber-600">
+          <a href="">Pets</a>
+          <a href="">Medications</a>
+        </div>
+      </div>
+    </nav>
+    <main class="px-40 py-10">
+      <div class="flex justify-between items-center mb-16">
+        <h2 class="text-5xl">Pet List</h2>
+        <button
+          class="bg-amber-600 text-sm rounded-full px-6 py-3 shadow-lg hover:bg-amber-400 active:bg-amber-300 focus:outline-none focus:ring focus:ring-amber-200"
+        >
+          <a href="">ADD PET</a>
+        </button>
+      </div>
+      <div id="contentContainer" class="flex flex-wrap justify-evenly">
+        <div
+          class="rounded border-solid border-2 w-1/4 p-6 shadow-lg text-center"
+        >
+          <h3 class="mb-4">Kyoto</h3>
+          <p>ernestas@ernestas.com</p>
+          <div class="flex justify-evenly mt-6"></div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
