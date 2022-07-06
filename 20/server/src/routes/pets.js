@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
         console.log(e);
     }
 
-    res.status(200).send(products);
+    res.status(200).send(pets);
 });
 
 
